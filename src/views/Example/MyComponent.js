@@ -16,6 +16,9 @@ class MyComponent extends React.Component {
       name: event.target.value,
     });
   };
+  handClickButton = () => {
+    alert("click here");
+  };
   render() {
     return (
       <React.Fragment>
@@ -28,6 +31,9 @@ class MyComponent extends React.Component {
           {console.log("my name is", this.state.name)}
         </div>
         <div className="second">Hello, My name is {this.state.name}</div>
+        <div className="third">
+          <button onClick={() => this.handClickButton()}>Click Here</button>
+        </div>
       </React.Fragment>
     );
   }
