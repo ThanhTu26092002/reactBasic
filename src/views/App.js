@@ -1,5 +1,11 @@
 import logo from "./logo.svg";
 import "./App.scss";
+import MyComponent from "./Example/MyComponent";
+
+/**
+ *  2 components: class components / function components (function, arrow)
+ * JSX
+ */
 
 function App() {
   return (
@@ -13,8 +19,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Reactnpm r
+          Learn React
         </a>
+        <MyComponent />
       </header>
     </div>
   );
