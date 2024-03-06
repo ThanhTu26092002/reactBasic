@@ -2,12 +2,12 @@ import React from "react";
 
 class AddComponents extends React.Component {
   state = {
-    titleJob: "",
+    title: "",
     salary: "",
   };
   handleOnchangeTitleJob = (event) => {
     this.setState({
-      titleJob: event.target.value,
+      title: event.target.value,
     });
   };
   handleOnchangeSalary = (event) => {
@@ -15,9 +15,38 @@ class AddComponents extends React.Component {
       salary: event.target.value,
     });
   };
+  // handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log("check data", this.state);
+  //   if (!this.state.salary || !this.state.salary) {
+  //     alert("please inter text...");
+  //     return;
+  //   }
+  //   this.props.addNewJob({
+  //     id: Math.floor(Math.random() * 1001),
+  //     title: this.state.title,
+  //     salary: this.state.salary,
+  //   });
+  //   this.setState({
+  //     title: "",
+  //     salary: "",
+  //   });
+  // };
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("check data", this.state);
+    if (!this.state.salary || !this.state.title) {
+      alert("please enter text: ");
+      return;
+    }
+    this.props.addNewJob({
+      id: Math.floor(Math.random) * 1001,
+      title: this.state.title,
+      salary: this.state.salary,
+    });
+    this.setState({
+      title: "",
+      salary: "",
+    });
   };
   render() {
     return (
@@ -26,7 +55,7 @@ class AddComponents extends React.Component {
         <br />
         <input
           type="text"
-          value={this.state.titleJob}
+          value={this.state.title}
           onChange={(event) => this.handleOnchangeTitleJob(event)}
         />
         <br />
