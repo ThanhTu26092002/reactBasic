@@ -9,6 +9,23 @@ class MyComponent extends React.Component {
   state = {
     firstName: "",
     lastName: "",
+    arrJobs: [
+      {
+        id: "abc001",
+        name: "Thanh Tu",
+        address: "Da Nang",
+      },
+      {
+        id: "abc002",
+        name: "Ha Nguyen",
+        address: "Ho Chi Minh",
+      },
+      {
+        id: "abc003",
+        name: "Quoc Dung",
+        address: "Ha Noi",
+      },
+    ],
   };
   handleOnchangeFirstName = (event) => {
     this.setState({
@@ -24,7 +41,7 @@ class MyComponent extends React.Component {
     alert(this.state.firstName + this.state.lastName);
   };
   render() {
-    console.log("render: ", this.state);
+    console.log("check render: ", this.state);
     return (
       <>
         <form>
@@ -50,9 +67,12 @@ class MyComponent extends React.Component {
             onClick={(event) => this.handleOnclickInput(event)}
           />
         </form>
-        <ChildrenComponent name={"child one"} />
-        <ChildrenComponent name={"child two"} />
-        <ChildrenComponent name={"child three"} />
+        <ChildrenComponent
+          name={this.state.firstName}
+          age={"23"}
+          address={"Quang Nam"}
+          Jobs={this.state.arrJobs}
+        />
       </>
     );
   }

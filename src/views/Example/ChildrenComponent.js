@@ -24,10 +24,28 @@ class ChildrenComponent extends React.Component {
     alert(this.state.firstName + this.state.lastName);
   };
   render() {
-    console.log("render: ", this.state);
+    console.log("check props ", this.props);
+    let { name, age, address, Jobs } = this.props;
     return (
       <>
-        <div>Child Components: {this.props.name}</div>
+        {/* <div className="Joblist">
+          {Jobs.map((item, index) => {
+            return (
+              <div key={item.id}>
+                {item.title}-{item.salary}
+              </div>
+            );
+          })}
+        </div> */}
+        <div className="Jobs">
+          {Jobs.map((item, index) => {
+            return (
+              <div key={item.id}>
+                {item.name} - {item.address}
+              </div>
+            );
+          })}
+        </div>
       </>
     );
   }
