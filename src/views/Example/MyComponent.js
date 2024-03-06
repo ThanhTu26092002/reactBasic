@@ -11,19 +11,19 @@ class MyComponent extends React.Component {
     lastName: "",
     arrJobs: [
       {
-        id: "abc001",
-        name: "Thanh Tu",
-        address: "Da Nang",
+        id: "abc01",
+        title: "dev",
+        salary: "400",
       },
       {
-        id: "abc002",
-        name: "Ha Nguyen",
-        address: "Ho Chi Minh",
+        id: "abc02",
+        title: "manager",
+        salary: "1000",
       },
       {
-        id: "abc003",
-        name: "Quoc Dung",
-        address: "Ha Noi",
+        id: "abc03",
+        title: "designer",
+        salary: "300",
       },
     ],
   };
@@ -69,9 +69,7 @@ class MyComponent extends React.Component {
         </form>
         <ChildrenComponent
           name={this.state.firstName}
-          age={"23"}
-          address={"Quang Nam"}
-          Jobs={this.state.arrJobs}
+          arrJobs={this.state.arrJobs}
         />
       </>
     );
