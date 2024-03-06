@@ -2,42 +2,6 @@ import React from "react";
 
 // ĐỊNH NGHĨA CLASS FUNCITON
 class ChildrenComponent extends React.Component {
-  // state = {
-  //   showJobs: false,
-  // };
-
-  // handleShowHide = () => {
-  //   this.setState({
-  //     showJobs: !this.state.showJobs,
-  //   });
-  // };
-  // render() {
-  //   let { arrJobs } = this.props;
-  //   let { showJobs } = this.state;
-  //   return (
-  //     <>
-  //       <div>
-  //         <button onClick={() => this.handleShowHide()}>Show</button>
-  //       </div>
-  //       {showJobs && (
-  //         <>
-  //           <div className="Jobs">
-  //             {arrJobs.map((item, index) => {
-  //               return (
-  //                 <div key={item.id}>
-  //                   {item.name} - {item.title}
-  //                 </div>
-  //               );
-  //             })}
-  //           </div>
-  //           <div>
-  //             <button onClick={() => this.handleShowHide()}>Hide</button>
-  //           </div>
-  //         </>
-  //       )}
-  //     </>
-  //   );
-  // }
   state = {
     showJobs: false,
   };
@@ -66,7 +30,7 @@ class ChildrenComponent extends React.Component {
               })}
             </div>
             <div>
-              <button onClick={() => this.handleOnclickShowHide()}>Show</button>
+              <button onClick={() => this.handleOnclickShowHide()}>Hide</button>
             </div>
           </>
         )}
