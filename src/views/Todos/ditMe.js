@@ -1,30 +1,35 @@
 import React, { Component } from "react";
+import AddDitMe from "./addDitMe";
 
 export default class ditMe extends Component {
   state = {
     listTodos: [
       {
         id: "001",
-        des: "lethanhtu",
+        title: "lethanhtu",
       },
       {
         id: "002",
-        des: "nguyenthiha",
+        title: "nguyenthiha",
       },
       {
         id: "003",
-        des: "lenguyenhoainam",
+        title: "lenguyenhoainam",
       },
     ],
+  };
+  AddNewTodo = (todo) => {
+    let currentListTodo = this.state.listTodos;
+    currentListTodo.push(todo);
+    this.setState({
+      AddNewTodo: currentListTodo,
+    });
   };
   render() {
     let { listTodos } = this.state;
     return (
       <div className="todo-container">
-        <div className="add-todo">
-          <input type="text" />
-          <button>Add</button>
-        </div>
+        <AddDitMe AddNewTodo={this.AddNewTodo} />
         <div className="list-todo-container">
           {listTodos &&
             listTodos.length > 0 &&
@@ -32,7 +37,7 @@ export default class ditMe extends Component {
               return (
                 <div className="todo-child" key={item.id}>
                   <span>
-                    {index + 1} - {item.des}
+                    {index + 1} - {item.title}
                   </span>
                   <button>Edit</button>
                   <button>Delete</button>
