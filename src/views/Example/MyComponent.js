@@ -27,14 +27,25 @@ class MyComponent extends React.Component {
       },
     ],
   };
-  // addNewJob = (job) => {
+  addNewJob = (job) => {
+    let currentJobs = this.state.arrJobs;
+    currentJobs.push(job);
+    this.setState({
+      arrJobs: currentJobs,
+    });
+  };
+  // deleteAJob = (job) => {
+  //   let currentJobs = this.state.arrJobs;
+  //   currentJobs = currentJobs.filter((item) => item.id !== job.id);
   //   this.setState({
-  //     arrJobs: [...this.state.arrJobs, job],
+  //     arrJobs: currentJobs,
   //   });
   // };
-  addNewJob = (job) => {
+  deleteAJob = (job) => {
+    let currentJobs = this.state.arrJobs;
+    currentJobs = currentJobs.filter((item) => item.id !== job.id);
     this.setState({
-      arrJobs: [...this.state.arrJobs, job],
+      arrJobs: currentJobs,
     });
   };
   render() {
@@ -42,7 +53,11 @@ class MyComponent extends React.Component {
     return (
       <>
         <AddComponents addNewJob={this.addNewJob} />
-        <ChildrenComponent arrJobs={this.state.arrJobs} />
+
+        <ChildrenComponent
+          arrJobs={this.state.arrJobs}
+          deleteAJob={this.deleteAJob}
+        />
       </>
     );
   }

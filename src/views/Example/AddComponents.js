@@ -15,23 +15,6 @@ class AddComponents extends React.Component {
       salary: event.target.value,
     });
   };
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   console.log("check data", this.state);
-  //   if (!this.state.salary || !this.state.salary) {
-  //     alert("please inter text...");
-  //     return;
-  //   }
-  //   this.props.addNewJob({
-  //     id: Math.floor(Math.random() * 1001),
-  //     title: this.state.title,
-  //     salary: this.state.salary,
-  //   });
-  //   this.setState({
-  //     title: "",
-  //     salary: "",
-  //   });
-  // };
   handleSubmit = (event) => {
     event.preventDefault();
     if (!this.state.salary || !this.state.title) {
@@ -39,7 +22,7 @@ class AddComponents extends React.Component {
       return;
     }
     this.props.addNewJob({
-      id: Math.floor(Math.random) * 1001,
+      id: Math.floor(Math.random() * 1001),
       title: this.state.title,
       salary: this.state.salary,
     });
