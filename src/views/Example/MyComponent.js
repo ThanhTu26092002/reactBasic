@@ -34,13 +34,6 @@ class MyComponent extends React.Component {
       arrJobs: currentJobs,
     });
   };
-  // deleteAJob = (job) => {
-  //   let currentJobs = this.state.arrJobs;
-  //   currentJobs = currentJobs.filter((item) => item.id !== job.id);
-  //   this.setState({
-  //     arrJobs: currentJobs,
-  //   });
-  // };
   deleteAJob = (job) => {
     let currentJobs = this.state.arrJobs;
     currentJobs = currentJobs.filter((item) => item.id !== job.id);

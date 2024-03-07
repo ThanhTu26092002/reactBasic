@@ -1,4 +1,5 @@
 import React from "react";
+import "./Demo.scss";
 
 // ĐỊNH NGHĨA CLASS FUNCITON
 class ChildrenComponent extends React.Component {
@@ -20,7 +21,12 @@ class ChildrenComponent extends React.Component {
     return (
       <>
         <div>
-          <button onClick={() => this.handleOnclickShowHide()}>Show</button>
+          <button
+            className="btn-show"
+            onClick={() => this.handleOnclickShowHide()}
+          >
+            Show
+          </button>
         </div>
         {showJobs && (
           <>
