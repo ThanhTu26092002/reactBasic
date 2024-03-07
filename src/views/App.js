@@ -3,6 +3,8 @@ import "./App.scss";
 import MyComponent from "./Example/MyComponent";
 import ListTodo from "./Todos/ListTodo";
 import DitMe from "./Todos/ditMe";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 /**
  *  2 components: class components / function components (function, arrow)
@@ -19,6 +21,18 @@ function App() {
         {/* <MyComponent /> */}
         <ListTodo />
       </header>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }

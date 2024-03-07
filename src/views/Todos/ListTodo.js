@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./ListTodo.scss";
+import { toast } from "react-toastify";
+import AddTodo from "./AddTodo";
 export default class ListTodo extends Component {
   state = {
     listTodos: [
@@ -17,14 +19,19 @@ export default class ListTodo extends Component {
       },
     ],
   };
+  AddNewTodo = (todo) => {
+    let currentListTodo = this.state.listTodos;
+    currentListTodo.push(todo);
+    this.setState({
+      AddNewTodo: currentListTodo,
+    });
+    toast.success("Wow so easy!");
+  };
   render() {
     let { listTodos } = this.state;
     return (
       <div className="list-todo-container">
-        <div className="add-todo">
-          <input type="text" />
-          <button>Add</button>
-        </div>
+        <AddTodo AddNewTodo={this.AddNewTodo} />
         <div className="list-todo-content">
           {listTodos &&
             listTodos.length > 0 &&
@@ -34,8 +41,8 @@ export default class ListTodo extends Component {
                   <span>
                     {index + 1} - {item.title}
                   </span>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                  <button className="edit">Edit</button>
+                  <button className="delete">Delete</button>
                 </div>
               );
             })}
