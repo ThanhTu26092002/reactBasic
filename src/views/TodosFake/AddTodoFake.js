@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
-export default class addDitMe extends Component {
+export default class AddTodoFake extends Component {
   state = {
     title: "",
   };
@@ -27,16 +27,19 @@ export default class addDitMe extends Component {
   render() {
     let { title } = this.state;
     return (
-      <div className="add-todo">
-        <input
-          type="text"
-          value={title}
-          onChange={(event) => this.handleOnChangeTitle(event)}
-        />
-        <button type="button" onClick={() => this.handleAddTodo()}>
-          Add
-        </button>
-      </div>
+      <>
+        <p>Hello Todo AppFake</p>
+        <div className="add-todo">
+          <input
+            type="text"
+            value={title}
+            onChange={(event) => this.handleOnChangeTitle(event)}
+          />
+          <button type="button" onClick={() => this.handleAddTodo()}>
+            Add
+          </button>
+        </div>
+      </>
     );
   }
 }

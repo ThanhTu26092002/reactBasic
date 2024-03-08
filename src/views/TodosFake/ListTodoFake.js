@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import AddDitMe from "./addDitMe";
+import AddTodoFake from "./AddTodoFake";
 import { toast } from "react-toastify";
 
-export default class ditMe extends Component {
+export default class ListTodoFake extends Component {
   state = {
     listTodos: [
       {
@@ -38,7 +38,7 @@ export default class ditMe extends Component {
     let { listTodos } = this.state;
     return (
       <div className="todo-container">
-        <AddDitMe AddNewTodo={this.AddNewTodo} />
+        <AddTodoFake AddNewTodo={this.AddNewTodo} />
         <div className="list-todo-container">
           {listTodos &&
             listTodos.length > 0 &&
