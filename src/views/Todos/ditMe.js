@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AddDitMe from "./addDitMe";
+import { toast } from "react-toastify";
 
 export default class ditMe extends Component {
   state = {
@@ -25,6 +26,14 @@ export default class ditMe extends Component {
       AddNewTodo: currentListTodo,
     });
   };
+  handleDeleteTodo = (todo) => {
+    let currentDeleteTodo = this.state.listTodos;
+    currentDeleteTodo = currentDeleteTodo.filter((item) => item.id !== todo.id);
+    this.setState({
+      listTodos: currentDeleteTodo,
+    });
+    toast.success("Delete succed");
+  };
   render() {
     let { listTodos } = this.state;
     return (
@@ -40,7 +49,9 @@ export default class ditMe extends Component {
                     {index + 1} - {item.title}
                   </span>
                   <button>Edit</button>
-                  <button>Delete</button>
+                  <button onClick={() => this.handleDeleteTodo(item)}>
+                    Delete
+                  </button>
                 </div>
               );
             })}
