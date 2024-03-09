@@ -4,12 +4,16 @@ import "./NavFake.scss";
 export default class NavFake extends Component {
   render() {
     return (
-      <div className="topnav">
+      <div className="topnav" exact={true}>
         <a className="active" href="/">
           Home
         </a>
-        <a href="/todofake">Todofake</a>
-        <a href="/aboutfake">Aboutfake</a>
+        <a className="active" href="/todofake">
+          Todofake
+        </a>
+        <a className="active" href="/aboutfake">
+          Aboutfake
+        </a>
       </div>
     );
   }

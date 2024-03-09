@@ -19,55 +19,21 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          {/* <Nav />
-          <img src={logo} className="App-logo" alt="logo" /> */}
-          {/* <ListTodoFake /> */}
-          {/* <MyComponent /> */}
-          {/* <ListTodo /> */}
-          {/* <HomeFake /> */}
-          {/* <Home /> */}
-          {/* <Switch>
+          <Nav />
+          <img src={logo} className="App-logo" alt="logo" />
+          <Switch>
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/todo">
+            <Route path="/Todo">
               <ListTodo />
             </Route>
+            npm
             <Route path="/about">
-              <MyComponent />
-            </Route>
-          </Switch> */}
-          <NavFake />
-          <img src={logo} className="App-logo" alt="logo" />
-          {/* <ListTodoFake /> */}
-          {/* <MyComponent /> */}
-          {/* <ListTodo /> */}
-          {/* <HomeFake /> */}
-          {/* <Home /> */}
-          <Switch>
-            <Route path="/abc" exact>
-              <HomeFake />
-            </Route>
-            <Route path="/todofake">
-              <ListTodoFake />
-            </Route>
-            <Route path="/aboutfake">
               <MyComponent />
             </Route>
           </Switch>
         </header>
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
       </div>
     </BrowserRouter>
   );

@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-
-export default class home extends Component {
+import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+class home extends Component {
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.history.push("/todo");
+    }, 3000);
+  }
   render() {
-    return <div>home</div>;
+    console.log("check props: ", this.props);
+    return <div>Home</div>;
   }
 }
+export default withRouter(home);

@@ -5,7 +5,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="topnav">
-        <a className="active" href="#home">
+        <a className="active" href="/">
           Home
         </a>
         <a href="todo">Todo</a>
