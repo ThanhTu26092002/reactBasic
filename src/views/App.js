@@ -10,6 +10,7 @@ import NavFake from "./NavFake/NavFake";
 import Home from "./Example/Home";
 import HomeFake from "./Example/HomeFake";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import Assigment from "./Example/Assigment";
 /**
  *  2 components: class components / function components (function, arrow)
  * JSX
@@ -21,11 +22,12 @@ function App() {
         <header className="App-header">
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
+          {/* <Assigment /> */}
           <Switch>
             <Route path="/" exact>
               <Home />
             </Route>
-            <Route path="/Todo">
+            <Route path="/todo">
               <ListTodo />
             </Route>
             npm
